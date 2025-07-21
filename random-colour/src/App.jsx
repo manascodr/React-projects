@@ -2,15 +2,17 @@ import { useEffect, useState } from 'react'
 import './App.css'
 
 function App() {
-  const [r, setr] = useState(0)
-  const [g, setg] = useState(0)
-  const [b, setb] = useState(0)
+
+const getRandomValue = () => { return Math.floor(Math.random() * 256);}
+const [r, setr] = useState(getRandomValue());
+const [g, setg] = useState(getRandomValue());
+const [b, setb] = useState(getRandomValue());
+
 
   const changeHandler = ()=>{
-
-   setr(()=>Math.floor(Math.random()*256))
-   setg(()=>Math.floor(Math.random()*256))
-   setb(()=>Math.floor(Math.random()*256))
+  setr(getRandomValue());
+  setg(getRandomValue());
+  setb(getRandomValue());
   }
 useEffect(() => {
   document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
