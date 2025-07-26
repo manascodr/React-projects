@@ -1,31 +1,27 @@
-import React, { useState, useEffect } from 'react'
+import { nanoid } from "nanoid";
+import React, { useState, useEffect } from "react";
+import TodoForm from "./components/TodoForm";
+import TodoList from "./components/TodoList";
+
 
 const App = () => {
-  const [tasks, setTasks] = useState([]);
-  const [input, setInput] = useState('');
-
-  const addBtn = () => {
-    setTasks([...tasks, input]);
-  }
-  const renderTasks = () => {
-    return tasks.map((task, index) => (
-      <div key={index}>{task}</div>
-    ));
-  }
+  const [tasks, setTasks] = useState([
+    {
+      id: nanoid(),
+      task: "yogi dancer",
+      isCompleted: false,
+    },
+  ]);
+    useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   return (
-    <div>
-      <input 
-        type="text" 
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      />
-      <button onClick={addBtn}>Add</button>
-      <div className="tasks">
-        {renderTasks()}
-      </div>
-    </div>
-  )
-}
+    <>
+      <TodoForm tasks={tasks} setTasks={setTasks} />
+      <TodoList tasks={tasks} setTasks={setTasks} />
+    </>
+  );
+};
 
-export default App
+export default App;
