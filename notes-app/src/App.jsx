@@ -2,24 +2,16 @@ import { useState } from "react";
 import "./App.css";
 import { nanoid } from "nanoid";
 import MainRoutes from "./Components/MainRoutes";
-import Home from "./Components/Home";
-import NoteForm from "./Components/NoteForm";
-import NoteList from "./Components/NoteList";
-
 
 function App() {
   const [notes, setnotes] = useState([
-    { id: nanoid(), title: "yogi", content: "lorm ipusmamasdf" },
+    { id: nanoid(), title: "Title", content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, blanditiis fugit praesentium ipsam doloribus, quasi non qui incidunt laborum eum facere aspernatur, quo quidem similique aut. Recusandae laboriosam laudantium earum!" },
   ]);
 
   return (
-    <>
-      <div className="main">
-        <MainRoutes />
-        <NoteForm notes={notes} setnotes={setnotes} />
-        <NoteList notes={notes} setnotes={setnotes} />
-      </div>
-    </>
+    <div className="main">
+      <MainRoutes notes={notes} setnotes={setnotes} />
+    </div>
   );
 }
 

@@ -11,7 +11,7 @@ body {
   width: 100%;
 }
 #root {
-  background-color: #7B4019;
+  background-color: #7b4019;
   height: 100%;
   width: 100%;
   display: flex;
@@ -24,6 +24,14 @@ body {
   height: 100%;
   align-items: center;
 }
+.form-cont {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 form {
   display: flex;
   flex-direction: column;
@@ -35,29 +43,91 @@ form {
     background-color: transparent;
     outline: none;
     border: none;
-    border-bottom: 2px solid darkgrey;
+    border-bottom: 2px solid white;
     height: 2rem;
     font-size: 1.5rem;
     color: white;
-    padding: .4rem;
+    padding: 0.4rem;
   }
   .content {
     background-color: transparent;
     outline: none;
     border: none;
-    border: 2px solid darkgray;
+    border: 2px solid white;
     height: 7rem;
     border-radius: 10px;
     color: white;
-    padding: .5rem;
+    padding: 0.5rem;
   }
-  button {
-    background-color: #FFEEA9;
-    outline: none;
-    border: none;
+}
+.add-btn {
+  background-color: #ffeea9;
+  outline: none;
+  border: none;
+  padding: 1rem;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.edit-btn {
+  padding: 0.5rem .5rem;
+  background-color: blueviolet;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  position: absolute;
+  right: 5rem;
+    font-weight: 600;
+
+}
+.btn {
+  padding: 2rem;
+  display: flex;
+  justify-content: end;
+}
+.btns{
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+.home {
+  width: 100%;
+  height: 100%;
+
+  h1 {
+    padding: 2rem;
+  }
+}
+.notes-cont {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .note {
+    background-color: #ffbf78;
     padding: 1rem;
     border-radius: 15px;
-    font-size: 1.2rem;
-    font-weight: 600;
+    width: 19%;
+    position: relative;
+
+    .title {
+      font-size: 2rem;
+    }
+    .content {
+      font-size: 1.2rem;
+    }
   }
+}
+.delete-btn {
+  padding: 0.5rem .5rem;
+  background-color: red;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  position: absolute;
+  right: 1rem;
+  font-weight: 600;
 }
