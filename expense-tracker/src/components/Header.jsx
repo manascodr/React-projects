@@ -1,15 +1,13 @@
-import React from 'react'
+import React from "react";
 
-
-const Header = () => {
-
-
+const Header = ({ transactions }) => {
+  const balance = transactions.reduce((balance, transaction) => balance + transaction.amount, 0);
 
   return (
-    <div>
-      
+    <div className="balance">
+      <p>{`Balance: ₹${balance}`}</p>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
