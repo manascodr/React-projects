@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import { nanoid } from "nanoid";
 import MainRoutes from "./Components/MainRoutes";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const [notes, setnotes] = useState([
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className="main">
       <MainRoutes notes={notes} setnotes={setnotes} />
+      <ToastContainer />
     </div>
   );
 }

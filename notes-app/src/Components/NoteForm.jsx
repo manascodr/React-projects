@@ -2,6 +2,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { nanoid } from "nanoid";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 
 const NoteForm = ({ notes, setnotes }) => {
   const {
@@ -19,6 +21,7 @@ const NoteForm = ({ notes, setnotes }) => {
       content: data.content,
     };
     setnotes([...notes, newnote]);
+    toast.success("note created")
     reset();
     navigate("/");
   };
