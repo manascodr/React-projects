@@ -84,6 +84,7 @@ form .content {
   position: absolute;
   right: 5rem;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .btn {
