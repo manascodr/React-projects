@@ -9,7 +9,7 @@ const MainRoutes = ({ notes, setnotes }) => {
     <Routes>
       <Route path="/" element={<Home notes={notes} setnotes={setnotes} />} />
       <Route path="/addnote" element={<NoteForm notes={notes} setnotes={setnotes} />} />
-      <Route path="/editnote:id" element={<EditNote notes={notes} setnotes={setnotes} />} />
+      <Route path="/editnote/:id" element={<EditNote notes={notes} setnotes={setnotes} />} />
     </Routes>
   )
 }
