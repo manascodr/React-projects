@@ -17,7 +17,7 @@ function SearchBar({ movies, setmovies }) {
       );
       const data = response.data;
       //   console.log(data.description);
-    //   console.log("setting movies:", data.description);
+      //   console.log("setting movies:", data.description);
       setmovies(data.description);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -30,9 +30,9 @@ function SearchBar({ movies, setmovies }) {
   }, []);
 
   // Log after movies state actually updates
-//   useEffect(() => {
-//     console.log(movies);
-//   }, [movies]);
+  //   useEffect(() => {
+  //     console.log(movies);
+  //   }, [movies]);
 
   const onSubmit = (data) => {
     console.log(data);
@@ -43,8 +43,15 @@ function SearchBar({ movies, setmovies }) {
   return (
     <div className="search-bar">
       <form className="search-form" onSubmit={handleSubmit(onSubmit)}>
-        <input className="search-input" {...register("search")} type="text" placeholder="Search movies..." />
-        <button className="search-button" type="submit">Search</button>
+        <input
+          className="search-input"
+          {...register("search")}
+          type="text"
+          placeholder="Search movies..."
+        />
+        <button className="search-button" type="submit">
+          Search
+        </button>
       </form>
     </div>
   );
